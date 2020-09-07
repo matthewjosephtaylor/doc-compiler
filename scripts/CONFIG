@@ -1,0 +1,21 @@
+declare -r PROJECT_DIR="${SCRIPT_DIR}/.."
+
+# Documentaiton config
+declare -r DOCS_DIR="${PROJECT_DIR}/docs"
+
+# Project info
+declare -r PROJECT_NAME=$(cat ${PROJECT_DIR}/package.json | jq -r '.name')
+declare -r PROJECT_SRC="${PROJECT_DIR}/$(cat ${PROJECT_DIR}/package.json | jq -r '.directories.src')"
+
+# Standard directories
+declare -r DIST_DIR="${PROJECT_DIR}/dist"
+declare -r SCRIPTS_DIR="${PROJECT_DIR}/scripts"
+declare -r DATA_DIR="${PROJECT_DIR}/data"
+declare -r TMP_DIR="${DATA_DIR}/tmp"
+declare -r TRASH_DIR="${PROJECT_DIR}/_TRASH"
+
+# Docker config
+declare -r IMAGE_NAME="${PROJECT_NAME}"
+declare -r IMAGE_TAG="latest"
+declare -r CONTAINER_NAME="${PROJECT_NAME}"
+
