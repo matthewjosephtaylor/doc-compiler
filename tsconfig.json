@@ -12,7 +12,7 @@
     "checkJs": false,
     "baseUrl": "src/ts",
     "paths": {
-      "@mjtdev/*": ["lib/*"]
+      "@mjtdev/*": ["*"]
     },
     "typeRoots": [
       "./node_modules/@types",
