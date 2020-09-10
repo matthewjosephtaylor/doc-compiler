@@ -1,10 +1,10 @@
 # Philosophy
 
-High-minded ideas for how this thing _should_ work
+High-minded ideas related to this project
 
 ## Constraints
 
-- Use the facilities within each source grammar
+- Use the native facilities within each source grammar
   - comments
   - links
   - imports where possible

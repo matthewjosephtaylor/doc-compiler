@@ -1,4 +1,4 @@
-# Theory
+# Theory of Operation
 
 Code and Documentation are one thing
 
@@ -32,6 +32,42 @@ Give the developer a concrete _target_ to translate _their_ source into an _inte
 
 Give content-tool creators a solid and stable _source_ (the common format) that can be used to generate content (documentation, etc...) from.
 
+# Parse to Type
+- developer creates parsers in the form
+```
+type ParserResult<V> = {
+  ... state
+  value: V
+}
+type Parser<I,O> = (ParserState<I>) => ParserState<O>
+```
+
+Run parser-set on project to produce intermediate form which is a LabelMap representing the parsed project
+
+Itermediate form is a inspected by content-production-tools to create content
+  - Documentation
+  - Graphs
+  - OpenAPI
+  - Code Search
+  - Posts for social media
+
+# No _correct_ way to parse
+- There is only existence / absence of finding and both are OK
+
+- Specify 'tree' of nested Container Types
 
 
+## Programmer decides on how it is structured
+- project
+  - folder
+    - file
+  - module       
 
+# Doc tool provides content for each part it recognizes
+- multiple tools in orchestration
+- programmer writes/uses library things which turn types -> content
+
+
+# Basic flow
+
+unstructured -> typed structure -> content

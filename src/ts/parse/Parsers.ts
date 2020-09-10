@@ -1,33 +1,22 @@
-import { LabelMap, LabelNode, LabelList } from "@mjtdev/label/LabelMaps";
+import { monad } from "@mjtdev/monad/Monad";
+import { Reader, reader } from "@mjtdev/monad/Monads";
+import { Parser } from "@mjtdev/parse/Parser";
 
-export type UriString = string;
-export type TextString = string;
-export type ErrorMessage = string;
-export type SourceIndex = number;
-export type TextColumn = number;
-export type TextLine = number;
-export type TextLocation = {
-  column: TextColumn;
-  line: TextLine;
-};
+export const charParser: Parser<string, number[]> = reader((text) => {
+  return text.split("").map((c) => c.charCodeAt(0));
+});
 
-export type Source = {
-  uri: UriString;
-  text: TextString;
-};
+export const pickCharParser: (index: number) => Parser<number[], number> = (
+  index
+) =>
+  reader((text) => {
+    return text[index];
+  });
 
-export type ParseError = {
-  parserStack: Parser[];
-  message: ErrorMessage;
-  textLocation: TextLocation;
-};
-
-export type Parser = (state: ParserState) => ParserState;
-export type ParameterizedParser<T> = (param: T) => Parser;
-
-export type ParserState = {
-  tree: LabelList;
-  source: Source;
-  index: SourceIndex;
-  error?: ParseError;
-};
+// export const strParser: Parser<string, Reader<number, number>> = (
+//   text: string
+// ) => {
+//   return reader((position: number) => {
+//     return text.charCodeAt(position);
+//   });
+// };
