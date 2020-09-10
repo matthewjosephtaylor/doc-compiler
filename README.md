@@ -4,6 +4,10 @@
 
 Compile Documentation from Source
 
+## Status
+
+This project is in the 'what if' / 'play' stage of coding. The code is not useful but some ideas are being expressed / toyed with.
+
 ## Why?
 
 There is currently no general purpose documentation language / generator that I like in the Javascript / Typescript ecosystem.
@@ -41,5 +45,6 @@ None of the generators want to share a common intermediate form, and so are to v
 [ ] - Write first parser/compiler that goes from source-code -> 'intermediate-form'
 
 [ ] - Write first generator that goes from 'intermediate-form' -> 'useful documentation'
-  - [ ] - OpenAPI
-  - [ ] - HTML
+
+- [ ] - OpenAPI
+- [ ] - HTML
