@@ -1,3 +1,7 @@
+/**
+ * Place for the basic Monads
+ */
+
 import { monad, Monad } from "@mjtdev/monad/Monad";
 
 export type Reader<A, T> = {
